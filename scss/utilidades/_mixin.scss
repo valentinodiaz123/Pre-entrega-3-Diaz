@@ -1,0 +1,37 @@
+@mixin contenedor-dos-galeria {
+    width: 70%;
+    height: 80vh;
+    padding-bottom: 3rem;
+    @include flex(space-between)
+}
+
+@mixin fotos {
+    width: 32%;
+    object-fit: cover;
+}
+
+@mixin flex ($justify-content) {
+    display: flex;
+    justify-content: $justify-content;
+    margin: auto;
+}
+
+@mixin fondo-imagen($url) {
+    background-image: $url;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin cards ($bckg){
+    color: aliceblue;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $bckg;
+    border-radius: 5px;
+    // border: solid 1px $bckg-radius;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 3rem;
+}
+

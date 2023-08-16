@@ -1,0 +1,112 @@
+/* Estilos discos */ /* Estilos discos */ /* Estilos discos */
+
+@import "utilidades/vars";
+@import "utilidades/mixin";
+
+.fondo{
+    @include fondo-imagen(url(../images/200904174834-cerati-showbiz.jpg));
+    padding-bottom: 2rem ;
+}
+
+.main-h2{
+    padding: 2rem;
+    font-size: 70px;
+    text-align: center;
+}
+
+/* Separador */
+
+.discos-div-hr-abajo-container{
+display: flex;
+justify-content: center;
+}
+
+.discos-div-hr-abajo{
+width: 40%;
+}
+
+.discos-hr-biografia-abajo{
+border:rgba(24, 24, 24, 1) solid 3px ;
+margin-bottom: 4rem;
+}
+
+/* clases del main discos */
+
+.main-discos{
+    width: 70%;
+    margin-top: 3rem;
+    @include flex (center);
+    flex-wrap: wrap;
+}
+
+main .main-discos iframe{
+    opacity: 93%;
+    margin: 1rem;
+}
+
+// Cards 
+
+.card-texto{
+    padding: 1rem;
+}
+
+.card-h5{
+    font-size: 20px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+}
+
+.card-p{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    font-size: 17px;
+}
+
+.card-img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+.card-bocanada{
+    @include cards(rgba(0, 110, 255, 0.925)) 
+}
+
+.card-amor-amarillo{
+    @include cards(rgba(255, 174, 0, 0.815)) 
+}
+
+.card-11ep{
+    @include cards(rgba(28, 66, 44, 0.897))
+}
+
+.card-FN{
+    @include cards(rgba(34, 44, 5, 0.925)) 
+}
+
+.card-SEH{
+    @include cards(rgba(201, 80, 58, 0.849)) 
+}
+
+.card-bien{
+    @include cards(rgba(82, 134, 143, 0.925))
+}
+
+
+.card-colores{
+    @include cards(rgba(98, 105, 206, 0.925)) 
+}
+
+.card-ahivamos{
+    @include cards(rgba(0, 0, 0, 0.925))
+}
+
+.card-satelite{
+    @include cards(rgba(82, 82, 82, 0.925))
+}
+
+ 

@@ -1,0 +1,303 @@
+/* reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//import
+
+@import "html/carrito";
+@import "html/biografia";
+@import "html/discos";
+@import "html/galeria";
+@import "html/contacto";
+@import "utilidades/vars";
+@import "utilidades/extend";
+
+// nesting
+
+/* Estilos del header */
+
+header{
+    font-family:'Roboto Condensed', sans-serif;
+    background-color: $color-principal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+     /* Estilos para el titulo del header */
+
+    div{
+        margin: 10px 60px;
+        a{
+           color: $tecer-color;
+            text-decoration: none; 
+            h1{
+                transition: 0.3s; 
+            }
+            h1:hover{
+                transition: 0.3s;
+                transform: scale(1.1) ;
+                text-shadow: 3px 2px 10px $segundo-color;
+            }
+        }
+    }
+
+    /* Estilos para la navbar del header */
+    nav{
+        display: flex;
+    }
+
+    nav ul li a{
+        color: $tecer-color;
+        text-decoration: none;
+        font-size: 25px;
+    }
+    nav ul li{
+        transition: 0.3s;
+    }
+    nav ul li:hover{
+        transition: 0.3s;
+        transform: scale(1.1) ;
+        text-shadow: 3px 2px 10px $segundo-color;
+    }
+    .lista-desordenada-nav{
+        @extend %listas-flex;
+        margin: 0px 60px;
+        align-items: center;
+    }
+}
+
+/* index main */
+
+main{
+    font-family:'Roboto Condensed', sans-serif;
+    .contenedor{
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        grid-template-rows: auto;
+        margin-top: 10px;
+        color: $tecer-color;
+    }
+    .index-main-div-img{
+        padding: 2rem
+    }
+    .index-main-imagen {
+        margin: 2rem;
+        height: 90%;
+        @extend %border-images;
+    }
+    .div-texto{
+        text-align: start;
+        padding: 2rem;
+    }
+    .h2-main{
+        text-align: start;
+        font-weight: 700;
+        font-size: 70px;
+        color:$segundo-color;
+        margin: 2rem;
+    }
+    .index-texto-biogafia{
+        margin: 2rem;
+        font-size: 20px;
+        overflow: hidden;
+    }
+    .div-texto-mobile{
+        display: none;
+    }
+}
+
+/* Estilos del footer */ /* Estilos del footer */ /* Estilos del footer */
+
+footer{
+    font-family:'Roboto Condensed', sans-serif;
+    background-color:$color-principal; 
+    color: $segundo-color;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-top: 10px;
+    padding: 30px;
+    div{
+        justify-self: center;
+    }
+    div ul{
+        @extend %listas-flex;
+        padding: 0%;
+        margin: 0%;
+        li{
+            text-align: center;
+        }
+        a img {
+            width: 30%;
+        }
+    }
+}
+
+/* Media queries */ /* Media queries */ /* Media queries */ 
+
+/* Media queries para zoom y pantallas excesivamente grandes  */
+
+@media screen and (min-width: 2133px){
+    main{
+        .contenedor{
+            height: 85vh;
+        }
+    }
+}
+
+
+/* Media queries para pc INDEX*/
+
+@media screen and (max-width: 1366px){
+    main{
+        .contenedor-grilla{
+            row-gap: 2rem;
+        }   
+    }
+}
+
+@media screen and (min-width: 1200px){
+    header nav ul li a{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    footer div ul li a img{
+        width: 50%;
+    }
+    main{
+        .segundo-contenedor-gria{
+            display: none;
+        }
+        .contenedor-grilla{
+            row-gap: 4rem; 
+        }
+        .contenedor-grilla{
+            grid-template-rows: 40% 40%;
+        }
+    }
+}
+
+/* media queries para tablets */
+
+@media screen and (max-width: 1024px){
+    header{
+        flex-flow: wrap;
+        margin-bottom: 10px;
+        .lista-desordenada-nav{
+            align-items: center;
+            justify-content: center;
+            flex-flow: wrap;
+            margin: 15px 50px;
+            gap: 16px;
+            nav ul {
+                padding-left: 0px
+            }
+        }
+    }
+    main{
+        .contenedor{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+        }
+        .index-main-div-img{
+            grid-row: 2;
+        }
+        .index-main-imagen{
+            margin: 0;
+        }
+        .h2-main{
+            text-align: center;
+        }
+        .index-texto-biogafia{
+            margin: 1rem;
+        }
+        .contenedor-biografia{
+            flex-direction: column;
+        }
+        .contenedor-texto{
+            width: 100%;
+        }
+        .div-img-1-main {
+            width: 100%;
+            padding: 1rem;
+        }
+        .contenedor-texto-dos {
+            width: 100%;
+        }
+        .div-img-2-main {
+            width: 100%;
+        }
+    }
+}
+
+/* media queries para celular */
+
+@media screen and (max-width: 800px){
+    header{
+        justify-content: center;
+    }
+    main{
+        .contenedor{
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.5fr;
+        }
+        .galeria-h2{
+            font-size: 40px;
+        }
+        .main-discos iframe{
+            width: 100%;
+        }
+        .div-texto{
+            display: none;
+        }
+        .div-texto-mobile{
+        display: block;
+        }
+    }
+    footer{
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: auto;
+        row-gap: 2rem;
+        div ul li a img{
+            width: 30%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 580px){
+    header{
+        padding-bottom:1rem;
+        .lista-desordenada-nav{
+            margin: 0px 0px;
+            padding: 0px;
+            li a{
+                font-size: 18px;
+            }
+        }
+    }
+    main {
+        .contenedor-grilla {
+            column-gap: 0.5rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

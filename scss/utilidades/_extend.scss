@@ -1,0 +1,19 @@
+// extend 
+
+%h2-estilo-uno{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: CENTER;
+}
+
+%border-images{
+    width: 100%;
+    object-fit: cover;
+    border: 5px solid $segundo-color;
+}
+
+%listas-flex{
+    list-style: none;
+    display: flex; 
+    gap: 35px;
+}

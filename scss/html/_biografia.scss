@@ -1,0 +1,84 @@
+@import"../utilidades/vars";
+@import "../utilidades/extend";
+
+
+/* Biografia */
+
+/* Primer separador */
+
+.div-hr-arriba-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+.div-hr-arriba{
+    width: 70%;
+}
+.hr-biografia-arriba{
+    border:rgba(235, 235, 235, 1) solid 10px ;
+}
+
+/* h2 */
+
+.h2-biografia-1{
+    @extend %h2-estilo-uno;
+    font-size: 64px;
+    color: $segundo-color;
+}
+
+/* Segundo separador */
+
+.div-hr-abajo-container{
+    display: flex;
+    justify-content: center;
+}
+.div-hr-abajo{
+    width: 40%;
+}
+.hr-biografia-abajo{
+    border:rgba(235, 235, 235, 1) solid 3px ;
+    margin-bottom: 1rem;
+}
+
+/* Primera imagen */
+
+.div-img-1-main{
+    width: 50%;
+    padding: 2rem 2rem 2rem 0rem;
+}
+
+.img-1-main{
+    height: 100%;
+    @extend %border-images;
+}
+
+/* Contenedores */
+
+.contenedor-paginas-biografia{
+    margin-top: 10px;
+}
+.contenedor-biografia{
+    display: flex;
+}
+
+/* Contenedores de texto */
+
+.contenedor-texto{
+    width: 50%;
+    color: $segundo-color;
+}
+.contenedor-texto-dos{
+    width: 50%;
+    color: $segundo-color;
+    background-color: $cuarto-color;
+}
+
+/* Segunda imagen    */
+.div-img-2-main{
+    width: 50%;
+}
+.img-2-main{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

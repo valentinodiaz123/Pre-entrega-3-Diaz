@@ -1,0 +1,51 @@
+/* Estilos carro */ /* Estilos discos */ /* Estilos discos */
+
+@import "utilidades/vars";
+@import "utilidades/mixin";
+
+.fondo-carrito{
+    background-color: $segundo-color;
+}
+.fondo-main-carrito{
+    background-color: $color-principal;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.carro{
+    padding: 2rem;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 0.5rem;
+    background-color: $color-principal;
+    color: white;
+}
+.main-carrito{
+    @include flex (center);
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $quinto-color;
+    color: $segundo-color;
+}
+
+.total h2 {
+    text-align: center;
+    margin: 5rem;
+}
+
+.h2-no-productos{
+    margin: 13.6rem;
+    color: aliceblue;
+    font-size: 60px;
+}
+
+.boton-finalizar{
+    font-size: 40px;
+}
+

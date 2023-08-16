@@ -1,0 +1,77 @@
+/* Estilos galeria */ /* Estilos galeria */ /* Estilos galeria */
+
+@import "utilidades/vars";
+@import "utilidades/mixin";
+
+.header-galeria{
+    position: fixed;
+    width: 100%;
+}
+
+main{
+    background-color: $color-principal;
+    .paralax-galeria{
+        @include fondo-imagen(url(../images/galeriafondo.jpg));
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .galeria-h2{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 90px;
+        text-shadow:black 3px 3px 2px;
+        color: $segundo-color;
+    }
+    
+    .galeria-section{
+        background-color: $color-principal;
+    }
+    
+    .imagen-bajo-section{
+        width: 70%;
+        display: flex;
+        margin: auto;
+        padding: 4rem 0rem;
+    }
+    
+    .contenedor-grilla{
+        height: 90vh;
+        width: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 40% 50%;
+        row-gap: 3rem;
+        column-gap: 2rem;
+        margin: auto;
+    }
+    
+    .contenedor-grilla div img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+    
+    .imagen-uno{
+        grid-column: span 3;
+        object-position: right top;
+    }
+    .imagen-dos{
+        object-position: top;
+    }
+    .imagen-tres{
+        object-position: left;
+    }
+    .imagen-cuatro{
+        object-position: top;
+    }
+    .segundo-contenedor-gria{
+        @include contenedor-dos-galeria;
+    }
+    .segundo-contenedor-gria img{
+        @include fotos
+    }
+}
+
