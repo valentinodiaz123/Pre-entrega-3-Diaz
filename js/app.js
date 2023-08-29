@@ -48,9 +48,10 @@ async function levantarProductos() {
             sweetAlertAñadir()
         }
         )
-    })
+    }) 
 
 }
+
 function sweetAlertAñadir() {
     Swal.fire({
         background: 'grey',
