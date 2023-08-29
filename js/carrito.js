@@ -6,61 +6,64 @@ class Carrito {
       this.listaCarrito = itemsCarrito
    }
    mostrarCarrito() {
-      const mainCarrito = document.getElementById("main-carrito")
 
-      mainCarrito.innerHTML = '';
+      if (this.listaCarrito.length > 0) {
+         const mainCarrito = document.getElementById("main-carrito")
 
-      itemsCarrito.forEach(producto => {
-         mainCarrito.innerHTML +=
-            `<div class="card-${producto.clase}">
-            <img class="card-img" src=${producto.img} alt="">
-            <div class="card-texto">
-               <p class="card-p">Disco: ${producto.nombre}</p>
-               <p class="card-p">Cantidad: 
-               <button class = "btn btn-light" id = "min-${producto.id}" ><i class="fa-solid fa-minus fa-2xs" style="color: #000000;"></i></button> ${producto.cantidad} <button class = "btn btn-light" id = "mas-${producto.id}"><i class="fa-solid fa-plus fa-2xs" style="color: #000000;"></i></button></p> 
-               <p class="card-p">Precio individual: $${producto.precio}</p>
-               <button id="borrar-${producto.id}"class= "btn btn-danger"><i class="fa-solid fa-trash fa-lg" style="color: #000000;"></i> </button>
-            </div>
-       </div>`
-      });
-
-      this.listaCarrito.forEach(productoArray => {
-         let botonEliminar = document.getElementById(`borrar-${productoArray.id}`)
-         let botonSumar = document.getElementById(`mas-${productoArray.id}`)
-         let botonRestar = document.getElementById(`min-${productoArray.id}`)
-         
-         botonEliminar.addEventListener("click", () => {
-            carrito.eliminar(productoArray)
-
-            if (itemsCarrito.length > 0) {
+         mainCarrito.innerHTML = '';
+   
+         itemsCarrito.forEach(producto => {
+            mainCarrito.innerHTML +=
+               `<div class="card-${producto.clase}">
+               <img class="card-img" src=${producto.img} alt="">
+               <div class="card-texto">
+                  <p class="card-p">Disco: ${producto.nombre}</p>
+                  <p class="card-p">Cantidad: 
+                  <button class = "btn btn-light" id = "min-${producto.id}" ><i class="fa-solid fa-minus fa-2xs" style="color: #000000;"></i></button> ${producto.cantidad} <button class = "btn btn-light" id = "mas-${producto.id}"><i class="fa-solid fa-plus fa-2xs" style="color: #000000;"></i></button></p> 
+                  <p class="card-p">Precio individual: $${producto.precio}</p>
+                  <button id="borrar-${producto.id}"class= "btn btn-danger"><i class="fa-solid fa-trash fa-lg" style="color: #000000;"></i> </button>
+               </div>
+          </div>`
+         });
+   
+         this.listaCarrito.forEach(productoArray => {
+            let botonEliminar = document.getElementById(`borrar-${productoArray.id}`)
+            let botonSumar = document.getElementById(`mas-${productoArray.id}`)
+            let botonRestar = document.getElementById(`min-${productoArray.id}`)
+            
+            botonEliminar.addEventListener("click", () => {
+               carrito.eliminar(productoArray)
+   
+               if (itemsCarrito.length > 0) {
+                  carrito.mostrarCarrito()
+                  carrito.mostrarTotalCompra()
+                  
+               } else {
+                  carrito.mostrarTotalCompra()
+                  const mainCarrito = document.getElementById("main-carrito")
+                  mainCarrito.innerHTML = '';
+                  mainCarrito.innerHTML += `<h2 class="h2-no-productos"> TODAVIA NO AÑADISTE PRODUCTOS AL CARRITO</h2>`
+               }
+            })
+   
+            botonSumar.addEventListener("click", () => {
+               carrito.sumarCantidad(productoArray)
+               carrito.guardarStorage()
                carrito.mostrarCarrito()
                carrito.mostrarTotalCompra()
                
-            } else {
+            })
+   
+            botonRestar.addEventListener("click", () => {
+               carrito.restarCantidad(productoArray)
+               carrito.guardarStorage()
+               carrito.mostrarCarrito()
                carrito.mostrarTotalCompra()
-               const mainCarrito = document.getElementById("main-carrito")
-               mainCarrito.innerHTML = '';
-               mainCarrito.innerHTML += `<h2 class="h2-no-productos"> TODAVIA NO AÑADISTE PRODUCTOS AL CARRITO</h2>`
-               console.log("asdfasdf")
-            }
+            })
          })
-
-         botonSumar.addEventListener("click", () => {
-            carrito.sumarCantidad(productoArray)
-            carrito.guardarStorage()
-            carrito.mostrarCarrito()
-            carrito.mostrarTotalCompra()
-            
-         })
-
-         botonRestar.addEventListener("click", () => {
-            carrito.restarCantidad(productoArray)
-            carrito.guardarStorage()
-            carrito.mostrarCarrito()
-            carrito.mostrarTotalCompra()
-         })
-      })
-   }
+      } else {
+         this.limpiarCarrito()
+      }}
 
    sumarCantidad(productoArray) {
       productoArray.cantidad = productoArray.cantidad +  1
@@ -100,7 +103,8 @@ class Carrito {
      
            this.listaCarrito.splice(index, 1) 
 
-           carrito.mostrarCarrito()
+           carrito.mostrarTotalCompra()
+           carrito.mostrarCarrito()   
            carrito.guardarStorage()
          }
        })
@@ -116,6 +120,7 @@ class Carrito {
       mainTotalCarrito.innerHTML = '';
 
       mainTotalCarrito.innerHTML += 
+
       `<h2>El total es de: $ ${carrito.calcularTotal()}</h2>`
    }
 
@@ -136,7 +141,31 @@ class Carrito {
          title: 'Tu compra a sido procesada correctamente. Gracias por elegirnos!',
          showConfirmButton: false,
          timer: 1500
-       })
+       }) 
+
+       this.limpiarCarrito()
+
+   }
+
+   limpiarCarrito(){
+
+      let mainCarrito = document.getElementById("main-carrito")
+
+      let totalCarrito = document.getElementById("total-compra")
+
+      let botonF = document.getElementById("boton-f") 
+
+      mainCarrito.innerHTML = '';
+
+      totalCarrito.innerHTML = '';
+
+      botonF.innerHTML = '';
+
+      mainCarrito.innerHTML += `<h2 id = "finalizar" class="h2-no-productos"> TODAVIA NO AÑADISTE PRODUCTOS AL CARRITO</h2>`
+
+      this.listaCarrito = []
+
+      carrito.guardarStorage()
    }
 }
 
@@ -156,7 +185,5 @@ if (itemsCarrito.length > 0) {
       carrito.finalizarSweetAlert()
    })
 } else {
-   const mainCarrito = document.getElementById("main-carrito")
-   mainCarrito.innerHTML += `<h2 id = "finalizar" class="h2-no-productos"> TODAVIA NO AÑADISTE PRODUCTOS AL CARRITO</h2>`
-
+   carrito.limpiarCarrito()
 }

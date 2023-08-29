@@ -1,0 +1,84 @@
+[
+    {
+        "nombre":"Colores Santos", 
+        "precio": 500,
+        "id": 1, 
+        "cantidad": 0,
+        "clase": "colores",
+        "img": "../images/tienda/R-5174760-1523572007-8968.jpg",
+        "descripcion" : "Colores Santos: Colaboración de Cerati y Daniel Melero en 1992, fusiona pop y electrónica, explorando sonidos vanguardistas y experimentales"
+    },
+    {
+        "nombre":"Amor Amarillo", 
+        "precio": 200,
+        "id":2, 
+        "cantidad": 0,
+        "clase": "amor-amarillo",
+        "img": "../images/tienda/maxresdefault.jpg",
+        "descripcion" : "Amor Amarillo: El primer álbum en solitario de Gustavo Cerati, lanzado en 1993, presenta un sonido más experimental y personal después de Soda Stereo, con influencias de pop y electrónica"
+    },
+    {
+        "nombre":"Bocanada", 
+        "precio": 500,
+        "id":3, 
+        "cantidad": 0,
+        "clase": "bocanada",
+        "img": "../images/tienda/Gustavo_Cerati-Bocanada-Frontal-1999-e1439311202313.jpg",
+        "descripcion" : "Amor Amarillo: El primer álbum en solitario de Gustavo Cerati, lanzado en 1993, presenta un sonido más experimental y personal después de Soda Stereo, con influencias de pop y electrónica"
+    },
+    {
+        "nombre":"11 episodios sinfonicos Edicion Vinilo", 
+        "precio": 1200,
+        "id":4, 
+        "cantidad": 0,
+        "clase": "11ep",
+        "img": "../images/tienda/11episodiso.jpeg",
+        "descripcion" : "11 Episodios Sinfónicos: Es un álbum en vivo lanzado en 2001, donde Cerati reinterpreta sus canciones con arreglos sinfónicos, mostrando su versatilidad musical y creatividad."
+    },
+    {
+        "nombre":"Siempre es hoy", 
+        "precio": 1000,
+        "id":5, 
+        "cantidad": 0,
+        "clase": "SEH",
+        "img": "../images/tienda/R-2763752-1459994209-7284.jpg",
+        "descripcion" : "Siempre es Hoy: Álbum de 2002, marca la incursión de Cerati en la música electrónica y experimental, con letras introspectivas y atmósferas modernas." 
+    },
+    {
+        "nombre":"Ahi vamos", 
+        "precio": 1000,
+        "id":6, 
+        "cantidad": 0,
+        "clase": "ahivamos",
+        "img": "../images/tienda/R-7880445-1450798843-8437.jpg",
+        "descripcion" : "Ahí Vamos: Lanzado en 2006, marca el regreso de Cerati al rock con toques electrónicos, presentando canciones emotivas y reflexivas después de un período de pausa creativa."
+    },
+    {
+        "nombre":"+ Bien", 
+        "precio": 100,
+        "id":7, 
+        "cantidad": 0,
+        "clase": "bien",
+        "img": "../images/tienda/R-3412093-1336129055.jpg",
+        "descripcion" : "+ Bien: Lanzado en 2001 como parte de la banda sonora de + Bien"
+    },
+    {
+        "nombre":"Fuerza Natural Edicion Vinilo", 
+        "precio": 1000,
+        "id":8, 
+        "cantidad": 0,
+        "clase": "FN",
+        "img": "../images/tienda/R-2629198-1428259396-9322.jpg",
+        "descripcion" : "Fuerza Natural: Último álbum de estudio de Cerati, lanzado en 2009, ofrece un sonido orgánico y reflexivo, fusionando rock y folk con letras introspectivas y melódicas."
+    },
+    {
+        "nombre":"Satelite Cerati", 
+        "precio": 1000,
+        "id":9, 
+        "cantidad": 0,
+        "clase": "satelite",
+        "img": "../images/tienda/R-12352328-1533507344-1473.jpg",
+        "descripcion" : "Satélite Cerati es un álbum recopilatorio póstumo de Gustavo Cerati, que reúne sus mejores colaboraciones con otras bandas y músicos. Fue lanzado el 10 de agosto de 2018"
+    }
+]
+
