@@ -12,13 +12,9 @@ class Carrito {
     agregar(productoAgregar) {
         let esta = this.arrayCarrito.some(element => element.id == productoAgregar.id)
 
-        if (esta) {
-            let existeProducto = this.arrayCarrito.find(producto => producto.id == productoAgregar.id)
-            existeProducto.cantidad = existeProducto.cantidad + 1
-        } else {
-            productoAgregar.cantidad = productoAgregar.cantidad + 1
-            this.arrayCarrito.push(productoAgregar)
-        }
+        esta
+            ? (this.arrayCarrito.find(producto => producto.id === productoAgregar.id).cantidad++)
+            : (productoAgregar.cantidad++, this.arrayCarrito.push(productoAgregar));
     }
 }
 
@@ -48,7 +44,7 @@ async function levantarProductos() {
             sweetAlertAñadir()
         }
         )
-    }) 
+    })
 
 }
 

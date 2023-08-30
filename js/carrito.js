@@ -33,17 +33,9 @@ class Carrito {
             
             botonEliminar.addEventListener("click", () => {
                carrito.eliminar(productoArray)
-   
-               if (itemsCarrito.length > 0) {
                   carrito.mostrarCarrito()
                   carrito.mostrarTotalCompra()
-                  
-               } else {
-                  carrito.mostrarTotalCompra()
-                  const mainCarrito = document.getElementById("main-carrito")
-                  mainCarrito.innerHTML = '';
-                  mainCarrito.innerHTML += `<h2 class="h2-no-productos"> TODAVIA NO AÑADISTE PRODUCTOS AL CARRITO</h2>`
-               }
+
             })
    
             botonSumar.addEventListener("click", () => {
@@ -82,7 +74,7 @@ class Carrito {
    }
 
    eliminar(productoAeliminar) {
-      Swal.fire({
+         Swal.fire({
          title: 'Estas seguro de eliminar el producto?',
          text: "Igualmente puedes volver a seleccionarlo en la tienda!",
          icon: 'warning',
@@ -174,16 +166,11 @@ const carrito = new Carrito
 totalDinero = 0
 
 
-if (itemsCarrito.length > 0) {
-   carrito.mostrarCarrito()
-   carrito.mostrarTotalCompra()
-   carrito.botonFinalizar()
-
-   let botonF = document.getElementById("boton-finalizar")
-
-   botonF.addEventListener("click", () =>{
-      carrito.finalizarSweetAlert()
-   })
-} else {
-   carrito.limpiarCarrito()
-}
+itemsCarrito.length > 0
+  ? (carrito.mostrarCarrito(),
+     carrito.mostrarTotalCompra(),
+     carrito.botonFinalizar(),
+     document.getElementById("boton-finalizar").addEventListener("click", () => {
+       carrito.finalizarSweetAlert();
+     }))
+  : carrito.limpiarCarrito();
